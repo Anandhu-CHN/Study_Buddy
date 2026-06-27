@@ -133,7 +133,7 @@
     }
     function saveProgress(id) { localStorage.setItem('cnt-' + id, document.getElementById('cnt-'+id).value); alert('Progress Saved!'); }
     function toggleComplete(id) { localStorage.setItem('done-' + id, localStorage.getItem('done-' + id) !== 'true'); init(); }
-    function openSyllabus() { window.open("https://drive.google.com/file/d/1n-oqblMX0ceBVqVQaVkbSpEtws_c8B_3/view?usp=sharing"); }
+    function openSyllabus() { window.open("Resourses/Gate_EE_2026_Syllabus_copy (1).pdf"); }
     function handleTTUpload(e) { const reader = new FileReader(); reader.onload = (ev) => { localStorage.setItem('tt', ev.target.result); renderTT(); }; reader.readAsDataURL(e.target.files[0]); }
     function renderTT() { const data = localStorage.getItem('tt'); if (data) document.getElementById('tt-display').innerHTML = `<img src="${data}" style="width:100%; border-radius:10px;">`; }
     function addTimedTask() { const t = document.getElementById('task-input').value; const time = document.getElementById('time-input').value; if (!t || !time) return; const task = { id: Date.now(), t, time }; let tasks = JSON.parse(localStorage.getItem('tasks') || '[]'); tasks.push(task); localStorage.setItem('tasks', JSON.stringify(tasks)); renderTask(task); }
