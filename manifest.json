@@ -1,0 +1,9 @@
+{
+  "name": "GATE Aspire 2027",
+  "short_name": "GATE2027",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#1e293b",
+  "icons": []
+}
