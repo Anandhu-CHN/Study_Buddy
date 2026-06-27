@@ -1,5 +1,5 @@
-
 const CACHE_NAME = 'gate-v1';
+// We include the relative path './' to ensure it points to your repo folder
 const ASSETS = ['./', './index.html', './manifest.json']; 
 
 self.addEventListener('install', (e) => {
@@ -7,5 +7,9 @@ self.addEventListener('install', (e) => {
 });
 
 self.addEventListener('fetch', (e) => {
-    e.respondWith(caches.match(e.request).then((response) => response || fetch(e.request)));
+    e.respondWith(
+        caches.match(e.request).then((response) => {
+            return response || fetch(e.request);
+        })
+    );
 });
